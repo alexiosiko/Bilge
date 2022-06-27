@@ -21,27 +21,27 @@ public class PointCalculations
         if (count == 7)
             return 4;
         if (count == 8)
-            return 6 * 2;
+            return 6 * 2 * 2;
         if (count == 9)
-            return 6 * 2;
+            return 6 * 2 * 2;
         if (count == 10)
-            return 6 * 2;
+            return 6 * 2 * 2;
         if (count == 11)
-            return 7 * 2;
+            return 7 * 2 * 2;
         if (count == 12)
-            return 7 * 4;
+            return 7 * 4 * 2;
         if (count == 13)
-            return 7 * 4;
+            return 7 * 4 * 2;
         if (count == 14)
-            return 8 * 5;
+            return 8 * 5 * 4;
         if (count == 15)
-            return 8 * 5;
+            return 8 * 5 * 4;
         if (count == 16)
-            return 10 * 8;
+            return 10 * 8 * 4;
         if (count == 17)
-            return 10 * 8;
+            return 10 * 8 * 4;
         if (count == 18)
-            return 12 * 8;
+            return 12 * 8 * 4;
         else
             return 14 * 10;
         

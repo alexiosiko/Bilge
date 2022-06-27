@@ -10,10 +10,11 @@ public class GameManager : MonoBehaviour
     public float maxPoints = 40000;
     public float moveCost = 750;
     public float speed = 0.1f;
-    public bool waiting = true;
+    [HideInInspector] public bool waiting = true;
     public float points = 4000;
     public SpriteRenderer boxSprite;
     private Transform water;
+    public bool freeze = false;
     SoundManager soundManager;
     void Awake()
     {   
@@ -40,6 +41,10 @@ public class GameManager : MonoBehaviour
     }
     public void Click(Vector2 pos)
     {
+        // If frozen (menu is open)
+        if (freeze)
+            return;
+
         // Waiting for animations to finish
         if (waiting == true)
             return;
@@ -114,6 +119,20 @@ public class GameManager : MonoBehaviour
     void Clear()
     {
         boardManager.Clear();
+    }
+    public void Restart()
+    {
+        // Waiting and points
+        waiting = true;
+        points = 4000;
+
+        // Board
+        boardManager.DeleteBoard();
+        boardManager.Start();
+
+        // Set box waiting color
+        boxSprite.color = new Color(1, 1, 1, 0.3f);
+
     }
     
     

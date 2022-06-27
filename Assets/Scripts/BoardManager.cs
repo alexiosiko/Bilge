@@ -17,7 +17,7 @@ public class BoardManager : MonoBehaviour
         gameManager = GameObject.FindObjectOfType<GameManager>();
         soundManager = GameObject.FindObjectOfType<SoundManager>();
     }
-    void Start()
+    public void Start()
     {
         soundManager.PlayAudio("BackgroundAudio");
         FillBoard();
@@ -226,7 +226,7 @@ public class BoardManager : MonoBehaviour
         // Rise
         StartCoroutine(Rise());
     }
-    void DeleteBoard()
+    public void DeleteBoard()
     {
         Transform piecesParent = GameObject.Find("Pieces").transform;
         foreach (Transform child in piecesParent)
